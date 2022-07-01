@@ -10,39 +10,36 @@ let handler = async (m, { conn }) => {
   let d = await fetch(c).then(a => a.buffer())
   let prepare = await require('@adiwajshing/baileys').generateWAMessageFromContent(m.key.remoteJid,{listMessage:{
   title: `${await conn.getName(conn.user.jid)}`,
-  description: ` *• SEWA BOT & UP TO PREMIUM •*
+  description: ` *• SEWA BOT •*
         
-1. Grup / 30 Hari
-Rp. 3.000 Dana
-Rp. 5.000 Pulsa
+1 MINGGU
+Rp 3.000 
 
-2. Premium / 30 Hari
-Rp. 5.000 Dana
-Rp. 10.000 Pulsa
+1 BULAN
+Rp 5.000
 
-3. Premium + Grup / 30 Hari
-Rp. 10.000 Dana
-Rp. 15.000 Pulsa
+PERMANEN 
+Rp 8.000
 
 wa.me/${owner[0]}
 *Bukan Bot!!!*
-*Owner ${conn.user.name}*
 `,
-  buttonText: 'Harga Sesuai Pasaran',
+buttonText: 'Harga Sesuai Pasaran',
   listType: 2,
   productListInfo: {
   productSections: [{
   title:'Klik untuk order',
-  products:[{productId:'7487741964584083'}]}],
-  headerImage: { productId: '7487741964584083',
+  products:[{productId:'5106306016153618'}]}],
+  headerImage: { productId: '5106306016153618',
   jpegThumbnail: baper },
-  businessOwnerJid: `6289654360447@s.whatsapp.net`
+  businessOwnerJid: `6281357580863@s.whatsapp.net`
   },
-  footerText: 'https://aiinne.github.io',
+  footerText: 'https://wa.me/message/4QJPU4SBCTHQK1',
   }},{})
   conn.relayMessage(prepare.key.remoteJid,prepare.message,{messageId:prepare.key.id})
   const data = global.owner.filter(([id, isCreator]) => id && isCreator)
   conn.sendContact(m.chat, data.map(([id, name]) => [id, name]), m)
+
 
 }
 handler.help = ['sewa']
